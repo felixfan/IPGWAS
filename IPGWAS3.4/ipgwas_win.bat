@@ -1,0 +1,1 @@
+perl ./bin/ipgwas_win.pl
