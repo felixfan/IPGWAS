@@ -3,15 +3,10 @@ use strict;
 
 use Getopt::Long;
 
-# use FindBin qw($Bin);
-# use lib "$Bin/../lib";
-
 ### covert ped/map to unphased beagle genotype file format
 ### inputs are standard PED/MAP (ACGT code, -9 and 0 =>missing)
-### Revised on 12 May 2012
+### Revised on 11 Jun 2014
 ### Yanhui Fan, nolanfyh@gmail.com
-
-### ped/map should include markers on the same chromosome!!!!
 
 my($ped, $map, $pht, $out);
 
@@ -62,8 +57,10 @@ my $t=0;
 	for(my $j=6; $j<$#arr; $j+=2)
 	{
 	my $s=$j+1;
-	$arr[$j]="?" if($arr[$j]=~/0|-9/);
-	$arr[$s]="?" if($arr[$s]=~/0|-9/);
+		if($arr[$j]=~/0|-9/ && $arr[$s]=~/0|-9/){
+			$arr[$j]="?";
+			$arr[$s]="?";
+		}
 	$geno1{$arr[1]}{$t}=$arr[$j];
 	$geno2{$arr[1]}{$t++}=$arr[$s];
 	}

@@ -30,6 +30,15 @@ perl scripts under "bins" directory are command line based programs.
 |                  http://www.well.ox.ac.uk/gwama/index.shtml                           |
 @---------------------------------------------------------------------------------------@
 
+# 4
+
+@---------------------------------------------------------------------------------------@
+|                      ped2beagle.pl & tped2beagle.pl                                   |
+|---------------------------------------------------------------------------------------|
+|      perl scripts for converting PLINK ped/map, tped/tfam to  beagle unphased         |
+|      unrelated input format. tped2beagle.pl is preferred (less memory is used)        |
+@---------------------------------------------------------------------------------------@
+
 # others
 run script without parameter to see the usage.
 e.g. perl ped2impute.pl
